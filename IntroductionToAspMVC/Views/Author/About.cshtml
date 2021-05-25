@@ -1,14 +1,23 @@
-﻿<h1>
-    About me
+﻿@model UserViewModel
+
+<h1>
+    About the authors
 </h1>
 
-<p>Hello, I am Michiel.</p>
+@{
+    foreach (User user in Model.Users)
+    {
+        <p>Hello, I am @user.Name @user.LastName</p>
+        <p>My date of birth is @user.DateOfBirth</p>
 
-<h2><i>Skills</i></h2>
-<ul>
-    <li>C#</li>
-    <li>JavaScript</li>
-    <li>Sql</li>
-    <li>Unity</li>
-    <li>Teaching</li>
-</ul>
+        <h2><i>Skills</i></h2>
+        <ul>
+            @{
+                foreach (var skill in user.Skills)
+                {
+                    <li>@skill</li>
+                }
+            }
+        </ul>
+    }
+}
