@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using IntroductionToAspMVC.Dto;
 using IntroductionToAspMVC.Models;
 using IntroductionToAspMVC.ViewModels;
 
@@ -10,6 +11,8 @@ namespace IntroductionToAspMVC.Helpers
         {
             CreateMap<Movie, MovieDetailViewModel>()
                 .ReverseMap();
+
+            CreateMap<Movie, MovieDto>();
         }
     }
 }

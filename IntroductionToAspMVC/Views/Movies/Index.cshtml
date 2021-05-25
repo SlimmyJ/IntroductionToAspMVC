@@ -1,6 +1,6 @@
 ﻿@model MovieViewModel
 
-@foreach (Movie movie in Model.Movies)
+@foreach (var movie in Model.Movies)
 {
        <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Detail" asp-route-id="@movie.Id">@movie.Title</a>
 }

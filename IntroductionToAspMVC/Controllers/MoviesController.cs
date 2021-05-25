@@ -1,8 +1,11 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using IntroductionToAspMVC.Services;
 using IntroductionToAspMVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using IntroductionToAspMVC.Dto;
+using IntroductionToAspMVC.Models;
 
 namespace IntroductionToAspMVC.Controllers
 {
@@ -19,9 +22,10 @@ namespace IntroductionToAspMVC.Controllers
 
         public IActionResult Index()
         {
+            ICollection<Movie> movies = _service.GetMovies();
             var viewModel = new MovieViewModel
             {
-                Movies = _service.GetMovies()
+                Movies = _mapper.Map<ICollection<MovieDto>>(movies)
             };
 
             return View(viewModel);

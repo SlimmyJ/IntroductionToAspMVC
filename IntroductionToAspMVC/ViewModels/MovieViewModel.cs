@@ -1,10 +1,10 @@
-﻿using IntroductionToAspMVC.Models;
+﻿using IntroductionToAspMVC.Dto;
 using System.Collections.Generic;
 
 namespace IntroductionToAspMVC.ViewModels
 {
     public class MovieViewModel
     {
-        public ICollection<Movie> Movies { get; set; }
+        public ICollection<MovieDto> Movies { get; set; }
     }
 }
