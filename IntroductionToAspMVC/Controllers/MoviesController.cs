@@ -8,8 +8,8 @@ namespace IntroductionToAspMVC.Controllers
 {
     public class MoviesController : Controller
     {
-        private IMovieService _service;
-        private IMapper _mapper;
+        private readonly IMovieService _service;
+        private readonly IMapper _mapper;
 
         public MoviesController(IMovieService service, IMapper mapper)
         {

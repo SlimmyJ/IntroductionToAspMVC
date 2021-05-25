@@ -6,7 +6,7 @@ namespace IntroductionToAspMVC.Controllers
 {
     public class AuthorController : Controller
     {
-        private IUserService _service;
+        private readonly IUserService _service;
 
         public AuthorController(IUserService service)
         {
