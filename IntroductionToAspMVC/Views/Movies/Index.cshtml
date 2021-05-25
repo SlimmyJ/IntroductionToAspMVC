@@ -1,0 +1,6 @@
+﻿@model IntroductionToAspMVC.ViewModels.MovieViewModel
+
+@foreach (Movie movie in Model.Movies)
+{
+       <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Detail">@movie.Title</a>
+}

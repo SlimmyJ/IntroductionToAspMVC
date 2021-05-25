@@ -1,5 +1,5 @@
-﻿using IntroductionToAspMVC.Models;
-using IntroductionToAspMVC.Services;
+﻿using IntroductionToAspMVC.Services;
+using IntroductionToAspMVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IntroductionToAspMVC.Controllers

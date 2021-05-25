@@ -1,14 +1,10 @@
+using IntroductionToAspMVC.Helpers;
 using IntroductionToAspMVC.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace IntroductionToAspMVC
 {
@@ -26,6 +22,9 @@ namespace IntroductionToAspMVC
         {
             services.AddControllersWithViews();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IMovieService, MovieService>();
+
+            services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
