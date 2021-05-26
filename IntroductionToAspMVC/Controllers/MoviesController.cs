@@ -42,5 +42,20 @@ namespace IntroductionToAspMVC.Controllers
 
             return View(viewModel);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(MovieDetailViewModel vm)
+        {
+            Movie movieModel = _mapper.Map<Movie>(vm);
+
+            // TODO: Store in DB, Call Service
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

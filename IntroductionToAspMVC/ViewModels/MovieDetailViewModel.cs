@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IntroductionToAspMVC.Enums;
+using System;
 
 namespace IntroductionToAspMVC.ViewModels
 {
@@ -11,5 +12,7 @@ namespace IntroductionToAspMVC.ViewModels
         public DateTime ReleaseDate { get; set; }
 
         public double Rating { get; set; }
+
+        public Genre Genre { get; set; }
     }
 }

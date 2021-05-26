@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IntroductionToAspMVC.Enums;
+using System;
 
 namespace IntroductionToAspMVC.Models
 {
@@ -11,6 +12,8 @@ namespace IntroductionToAspMVC.Models
         public DateTime ReleaseDate { get; set; }
 
         public double Rating { get; set; }
+
+        public Genre Genre { get; set; }
 
         public DateTime Created { get; set; }
 
