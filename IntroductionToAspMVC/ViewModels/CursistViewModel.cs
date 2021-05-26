@@ -17,6 +17,8 @@ namespace IntroductionToAspMVC.ViewModels
 
         public int Age { get; set; }
 
+        public DateTime DateOfBirth { get; set; }
+
         public int Gender { get; set; }
     }
 }
