@@ -8,7 +8,7 @@ namespace IntroductionToAspMVC.Services
     {
         public List<User> GetUsers()
         {
-            string[] skills = new string[] { "C#", "JavaScript", "Sql", "Unity", "Teaching" };
+            string[] skills = { "C#", "JavaScript", "Sql", "Unity", "Teaching" };
 
             return new List<User>{
                     new User

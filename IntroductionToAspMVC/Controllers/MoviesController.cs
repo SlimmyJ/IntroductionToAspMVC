@@ -9,6 +9,8 @@ using IntroductionToAspMVC.Models;
 
 namespace IntroductionToAspMVC.Controllers
 {
+    [Route("/films")]
+    [Route("/movies")]
     public class MoviesController : Controller
     {
         private readonly IMovieService _service;
@@ -20,6 +22,7 @@ namespace IntroductionToAspMVC.Controllers
             _mapper = mapper;
         }
 
+        [Route("Index")]
         public IActionResult Index()
         {
             ICollection<Movie> movies = _service.GetMovies();
@@ -31,9 +34,11 @@ namespace IntroductionToAspMVC.Controllers
             return View(viewModel);
         }
 
+        [Route("MovieInformation/{id}")]
+        [Route("Detail/{id}")]
         public IActionResult Detail(int id)
         {
-            Models.Movie movie = _service.GetMovies().FirstOrDefault(x => x.Id == id);
+            Movie movie = _service.GetMovies().FirstOrDefault(x => x.Id == id);
             MovieDetailViewModel viewModel = _mapper.Map<MovieDetailViewModel>(movie);
 
             return View(viewModel);
