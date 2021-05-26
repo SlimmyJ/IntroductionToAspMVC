@@ -7,10 +7,13 @@
     </tr>
     <tr>
         <td>Year of release:</td>
-        <td>@Model.ReleaseDate.Year</td>
+        <td>@Model.ReleaseDate?.Year</td>
     </tr>
     <tr>
         <td>Rating:</td>
-        <td>@Model.Rating</td>
+        <td>@Model.Rating / 10</td>
+
+        <td>Label:</td>
+        <td>@Model.ReleaseDate / 10</td>
     </tr>
 </table>

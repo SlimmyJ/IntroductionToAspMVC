@@ -1,8 +1,9 @@
-﻿using IntroductionToAspMVC.Enums;
-using System;
-
-namespace IntroductionToAspMVC.Models
+﻿namespace IntroductionToAspMVC.Models
 {
+    using System;
+
+    using IntroductionToAspMVC.Enums;
+
     public class Movie
     {
         public int Id { get; set; }
@@ -16,6 +17,8 @@ namespace IntroductionToAspMVC.Models
         public Genre Genre { get; set; }
 
         public DateTime Created { get; set; }
+
+        public string Description { get; set; }
 
         public DateTime Modified { get; set; }
     }

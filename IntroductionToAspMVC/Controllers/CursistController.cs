@@ -1,10 +1,12 @@
-﻿using AutoMapper;
-using IntroductionToAspMVC.Models;
-using IntroductionToAspMVC.ViewModels;
-using Microsoft.AspNetCore.Mvc;
-
-namespace IntroductionToAspMVC.Controllers
+﻿namespace IntroductionToAspMVC.Controllers
 {
+    using AutoMapper;
+
+    using IntroductionToAspMVC.Models;
+    using IntroductionToAspMVC.ViewModels;
+
+    using Microsoft.AspNetCore.Mvc;
+
     public class CursistController : Controller
     {
         private IMapper _mapper;
