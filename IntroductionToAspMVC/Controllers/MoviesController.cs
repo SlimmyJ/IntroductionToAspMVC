@@ -4,7 +4,6 @@ using IntroductionToAspMVC.Services;
 using IntroductionToAspMVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
-using IntroductionToAspMVC.Dto;
 using IntroductionToAspMVC.Models;
 
 namespace IntroductionToAspMVC.Controllers
@@ -28,7 +27,7 @@ namespace IntroductionToAspMVC.Controllers
             ICollection<Movie> movies = _service.GetMovies();
             var viewModel = new MovieViewModel
             {
-                Movies = _mapper.Map<ICollection<MovieDto>>(movies)
+                Movies = _mapper.Map<ICollection<Movie>>(movies)
             };
 
             return View(viewModel);
