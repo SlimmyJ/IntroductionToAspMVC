@@ -13,6 +13,9 @@ namespace IntroductionToAspMVC.Helpers
                 .ReverseMap();
 
             CreateMap<Movie, MovieDto>();
+
+            CreateMap<Cursist, CursistViewModel>()
+                .ReverseMap();
         }
     }
 }
