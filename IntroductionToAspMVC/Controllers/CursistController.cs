@@ -2,10 +2,6 @@
 using IntroductionToAspMVC.Models;
 using IntroductionToAspMVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace IntroductionToAspMVC.Controllers
 {
@@ -31,11 +27,20 @@ namespace IntroductionToAspMVC.Controllers
         [HttpPost]
         public IActionResult Create(CursistViewModel vm)
         {
-            Cursist cursist = _mapper.Map<Cursist>(vm);
+            // Verify if all data annotations check in ViewModel are valid
+            bool isValid = TryValidateModel(vm);
 
-            // TODO: Data to be sent to service
+            if (isValid)
+            {
+                Cursist cursist = _mapper.Map<Cursist>(vm);
 
-            return RedirectToAction(nameof(Index));
+                // TODO: Data to be sent to service
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            // Show view again with errors if model is not valid
+            return View(vm);
         }
     }
 }
